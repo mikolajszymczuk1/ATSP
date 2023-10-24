@@ -62,6 +62,7 @@ class AtspFileReader
             // Generate matrix
             int row = 0;
             int col = 0;
+            costMatrix = new int[Convert.ToInt32(_dimension), Convert.ToInt32(_dimension)];
             foreach (string el in elements)
             {
                 if (el == "EOF") break;
