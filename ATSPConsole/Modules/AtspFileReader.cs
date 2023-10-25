@@ -26,7 +26,7 @@ class AtspFileReader
     /// Method read .astp file and get all needed information from it
     /// </summary>
     /// <returns>
-    /// Number of cities and array of costs
+    /// Costs matrix
     /// </returns>
     public int[,] ReadFile()
     {

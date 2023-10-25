@@ -19,6 +19,9 @@ class Atsp
         _visited = new bool[numCities];
     }
 
+    public List<int> BestTour => _bestPath;
+    public int BestTourLength => _bestPathLength;
+
     /// <summary>
     /// Main solving method to calculate and find shortest path
     /// </summary>
@@ -43,7 +46,7 @@ class Atsp
     }
 
     /// <summary>
-    /// Method find shortest path and works re
+    /// Method finds shortest path with brute force method
     /// </summary>
     /// <param name="currentPath">Current path</param>
     /// <param name="depth">Depth</param>
@@ -84,7 +87,4 @@ class Atsp
             }
         }
     }
-
-    public List<int> BestTour => _bestPath;
-    public int BestTourLength => _bestPathLength;
 }

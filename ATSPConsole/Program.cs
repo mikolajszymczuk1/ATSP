@@ -4,28 +4,6 @@ class Program
 {
     private const int DEFAULT_SIZE = 4;
 
-    static void PrintMenu()
-    {
-        Console.WriteLine("====== MENU ======");
-        Console.WriteLine("1) Load data from file");
-        Console.WriteLine("2) Generate random data");
-        Console.WriteLine("3) Show loaded data");
-        Console.WriteLine("4) Run program");
-        Console.WriteLine("5) Exit program");
-    }
-
-    static void PrintData(int[,] dataToPrint) {
-        for (int i = 0; i < dataToPrint.GetLength(0); i++)
-        {
-            for (int j = 0; j < dataToPrint.GetLength(1); j++)
-            {
-                Console.Write(dataToPrint[i, j] + "\t");
-            }
-
-            Console.WriteLine();
-        }
-    }
-
     static void Main()
     {
         string? selectedOption = "";
@@ -34,13 +12,14 @@ class Program
 
         while (selectedOption != "5")
         {
-            PrintMenu();
+            PrintHelper.PrintMenu();
             Console.Write("Your option: ");
             selectedOption = Console.ReadLine();
             Console.Clear();
 
             switch (selectedOption)
             {
+                // Option 1
                 case "1":
                     Console.Write("Write path to file: ");
                     string? filePath = Console.ReadLine();
@@ -51,16 +30,19 @@ class Program
 
                     break;
 
+                // Option 2
                 case "2":
                     Console.Write("Write matrix size: ");
                     size = Convert.ToInt32(Console.ReadLine());
                     data = AtspDataGenerator.GenerateData(size);
                     break;
 
+                // Option 3
                 case "3":
-                    PrintData(data);
+                    PrintHelper.PrintData(data);
                     break;
 
+                // Option 4
                 case "4":
                     Console.WriteLine("Program output: ");
 
@@ -70,6 +52,7 @@ class Program
                     Console.WriteLine("Path cost: " + atsp.BestTourLength);
                     break;
 
+                // Option 5
                 case "5":
                     Console.WriteLine("Exit the program :)");
                     break;
