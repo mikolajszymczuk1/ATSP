@@ -1,6 +1,6 @@
 namespace ATSP;
 
-class AtspFileReader
+public class AtspFileReader
 {
     private string _astpFilePath = "";
     private string? _name = "";

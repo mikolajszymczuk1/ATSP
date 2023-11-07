@@ -8,7 +8,7 @@ class Program
     {
         string? selectedOption = "";
         int size = DEFAULT_SIZE;
-        int[,] data = AtspDataGenerator.GenerateData(DEFAULT_SIZE);
+        int[,] data = AtspDataGenerator.GenerateData(DEFAULT_SIZE, new Random());
 
         while (selectedOption != "5")
         {
@@ -34,7 +34,7 @@ class Program
                 case "2":
                     Console.Write("Write matrix size: ");
                     size = Convert.ToInt32(Console.ReadLine());
-                    data = AtspDataGenerator.GenerateData(size);
+                    data = AtspDataGenerator.GenerateData(size, new Random());
                     break;
 
                 // Option 3

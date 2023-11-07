@@ -2,7 +2,7 @@ using System.Diagnostics;
 
 namespace ATSP;
 
-class Atsp
+public class Atsp
 {
     private readonly int[,] _costMatrix;
     private readonly bool[] _visited;
