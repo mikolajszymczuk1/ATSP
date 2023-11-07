@@ -11,8 +11,9 @@ class PrintHelper
         Console.WriteLine("1) Load data from file");
         Console.WriteLine("2) Generate random data");
         Console.WriteLine("3) Show loaded data");
-        Console.WriteLine("4) Run program");
-        Console.WriteLine("5) Exit program");
+        Console.WriteLine("4) Run program (BF)");
+        Console.WriteLine("5) Run program (DP)");
+        Console.WriteLine("6) Exit program");
     }
 
     /// <summary>

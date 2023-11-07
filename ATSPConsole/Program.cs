@@ -6,11 +6,12 @@ class Program
 
     static void Main()
     {
+        Atsp atsp;
         string? selectedOption = "";
         int size = DEFAULT_SIZE;
         int[,] data = AtspDataGenerator.GenerateData(DEFAULT_SIZE, new Random());
 
-        while (selectedOption != "5")
+        while (selectedOption != "6")
         {
             PrintHelper.PrintMenu();
             Console.Write("Your option: ");
@@ -44,16 +45,28 @@ class Program
 
                 // Option 4
                 case "4":
+                    Console.WriteLine("Brute Force method");
                     Console.WriteLine("Program output: ");
 
-                    Atsp atsp = new(size, data);
-                    Console.WriteLine("Total time: " + atsp.Solve() + "ms");
+                    atsp = new(size, data);
+                    Console.WriteLine("Total time: " + atsp.SolveBF() + "ms");
                     Console.WriteLine("Best path: " + string.Join(" -> ", atsp.BestTour));
                     Console.WriteLine("Path cost: " + atsp.BestTourLength);
                     break;
 
                 // Option 5
                 case "5":
+                    Console.WriteLine("Dynamic Programming method");
+                    Console.WriteLine("Program output: ");
+
+                    atsp = new(size, data);
+                    Console.WriteLine("Total time: " + atsp.SolveDP() + "ms");
+                    Console.WriteLine("Best path: " + string.Join(" -> ", atsp.BestTour));
+                    Console.WriteLine("Path cost: " + atsp.BestTourLength);
+                    break;
+
+                // Option 6
+                case "6":
                     Console.WriteLine("Exit the program :)");
                     break;
             }
