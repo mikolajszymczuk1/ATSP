@@ -13,7 +13,8 @@ class PrintHelper
         Console.WriteLine("3) Show loaded data");
         Console.WriteLine("4) Run program (BF)");
         Console.WriteLine("5) Run program (DP)");
-        Console.WriteLine("6) Exit program");
+        Console.WriteLine("6) Run program (TS)");
+        Console.WriteLine("7) Exit program");
     }
 
     /// <summary>

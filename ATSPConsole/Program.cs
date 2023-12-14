@@ -11,7 +11,7 @@ class Program
         int size = DEFAULT_SIZE;
         int[,] data = AtspDataGenerator.GenerateData(DEFAULT_SIZE, new Random());
 
-        while (selectedOption != "6")
+        while (selectedOption != "7")
         {
             PrintHelper.PrintMenu();
             Console.Write("Your option: ");
@@ -23,8 +23,8 @@ class Program
                 // Option 1
                 case "1":
                     Console.Write("Write path to file: ");
-                    string? filePath = Console.ReadLine();
-                    AtspFileReader afr = new(filePath!);
+                    string? filePath1 = Console.ReadLine();
+                    AtspFileReader afr = new(filePath1!);
                     Console.WriteLine(afr.Dimension);
                     data = afr.ReadFile();
                     size = Convert.ToInt32(afr.Dimension);
@@ -67,6 +67,22 @@ class Program
 
                 // Option 6
                 case "6":
+                    Console.WriteLine("Tabu Search method");
+                    Console.Write("Write path to file: ");
+                    string? filePath2 = Console.ReadLine();
+                    Console.WriteLine("\nProgram output: ");
+
+                    new AtspTabuSearch(
+                        new AtspFileReaderV2(filePath2!).ReadFile(),
+                        1000,
+                        SwapMethod.InsertSwap,
+                        false
+                    ).Start();
+
+                    break;
+
+                // Option 7
+                case "7":
                     Console.WriteLine("Exit the program :)");
                     break;
             }
