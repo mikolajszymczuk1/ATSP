@@ -83,6 +83,21 @@ class Program
 
                 // Option 7
                 case "7":
+                    Console.WriteLine("Genetic Algorithm");
+                    Console.Write("Write path to file: ");
+                    string? filePath3 = Console.ReadLine();
+                    Console.WriteLine("\nProgram output: ");
+
+                    new AtspGeneticAlgorithm(
+                        new AtspFileReaderV2(filePath3!).ReadFile(),
+                        120000, 800, 0.8f, 0.01f,
+                        CoMethod.PartiallyMappedCo, false
+                    ).Start();
+
+                    break;
+
+                // Option 8
+                case "8":
                     Console.WriteLine("Exit the program :)");
                     break;
             }
